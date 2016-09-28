@@ -11,10 +11,3 @@ POV-Rayのためのincファイル集です.
 | Hy_objects.inc | オブジェクトの定義 |
 | Hy_clock.inc | 時間変数の設定 |
 | Hy_camera.inc | カメラの設定 |
-
-
-| inc file        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
