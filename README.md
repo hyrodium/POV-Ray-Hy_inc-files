@@ -3,7 +3,7 @@
 POV-Rayのためのincファイル集です.
 
 | inc file |内容|
-| -|-|
+| ---- | ---- |
 | Hy_constants.inc | 定数の定義. |
 | Hy_colors.inc | 色の定義. |
 | Hy_funcitons.inc | 関数の定義. |
