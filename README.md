@@ -2,17 +2,14 @@
 
 POV-Rayのためのincファイル集です.
 
-- Hy_constants.inc
-定数の定義.
-- Hy_colors.inc
-色の定義.
-標準のcolors.incよりも内容を減らしている.
+|inc file|内容|
+|:-|:-|
+|Hy_constants.inc | 定数の定義. |
+|Hy_colors.inc | 色の定義. |
+|Hy_funcitons.inc | 関数の定義. |
+|Hy_transformations.inc | 変形の定義 |
+|Hy_objects.inc | オブジェクトの定義 |
+|Hy_clock.inc | 時間変数の設定 |
+|Hy_camera.inc | カメラの設定 |
 
-## Hy_funcitons.inc
-関数の定義.
-
-## Hy_transformations.inc
-## Hy_objects.inc
-## Hy_clock.inc
-## Hy_.inc
 
