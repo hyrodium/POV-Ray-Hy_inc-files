@@ -136,7 +136,7 @@ object{Torus3(b,c,d,0.01)}
 object{Torus3(c,d,a,0.01)}
 object{Torus3(d,a,b,0.01)}
 
-object{Sphere4(a,b,c,d) pigment{Magenta}}
+object{Sphere4(a,b,c,d) pigment{GrayTr}}
 
 
 /*
