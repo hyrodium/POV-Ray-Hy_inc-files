@@ -204,5 +204,5 @@
 #end
 
 #macro Sphere4(a,b,c,d)
-	Sphere(CircumCenter4(a,b,c,d),vlength(a,CircumCenter4(a,b,c,d)))
+	Sphere(CircumCenter4(a,b,c,d),vlength(a-CircumCenter4(a,b,c,d)))
 #end
