@@ -52,6 +52,12 @@
 #end
 background{rgb<1,1,1>}
 
+
+//#declare X=;
+#declare Y=-SCS(Lng,Lat);
+//#declare Z=;
+
+
 /*
 #declare AspectRatio=4/3;
 #declare Lng=0;

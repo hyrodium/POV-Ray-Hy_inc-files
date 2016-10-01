@@ -16,14 +16,10 @@ global_settings{assumed_gamma 1.0}
 #include "Hy_colors.inc"
 #include "Hy_objects.inc"
 
-
-
 //#declare Time=1;
 #declare N_Time=5;
 #declare Dir_Time=1;
-//#include "Hy_Clock.inc"
-#ifndef(Time) #declare Time=clock; #end
-
+#include "Hy_clock.inc"
 
 #declare AspectRatio=16/9;
 #declare Lng=30;
@@ -31,7 +27,6 @@ global_settings{assumed_gamma 1.0}
 #declare Pers=0.1;
 #declare Zoom=1/3;
 #declare LookAt=<0,0,0>;
-
 #include "Hy_camera.inc"
 
 
