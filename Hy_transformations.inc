@@ -26,3 +26,13 @@
 	translate -p0
 	Matrix(vaxis_rotate(x,n,degrees(w)),vaxis_rotate(y,n,degrees(w)),vaxis_rotate(z,n,degrees(w)),p0)
 #end
+
+#macro Front(level)
+	#if(Pers)
+		translate -Loc
+		scale 1/level
+		translate Loc
+	#else
+		translate Z*level
+	#end
+#end

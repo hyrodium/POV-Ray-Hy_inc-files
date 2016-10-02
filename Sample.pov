@@ -1,36 +1,29 @@
 //Hyrodium's POV-Ray format
-//20160924
-
-//Axis inc
+//20161003
 
 #version 3.7;
 global_settings{assumed_gamma 1.0}
 
-//#declare Step=1/pow(2,5);
-//#declare NDStep=1/512;
-//#declare Iota=0.001;
-
 #include "Hy_constants.inc"
 #include "Hy_functions.inc"
-#include "Hy_transformations.inc"
 #include "Hy_colors.inc"
-#include "Hy_objects.inc"
 
 //#declare Time=1;
 #declare N_Time=5;
 #declare Dir_Time=1;
 #include "Hy_clock.inc"
 
-#declare AspectRatio=16/9;
+#declare AspectRatio=1/1;
 #declare Lng=30;
 #declare Lat=30;
+#declare Tilt=0;
 #declare Pers=0.1;
-#declare Zoom=1/3;
+#declare Zoom=2/3;
 #declare LookAt=<0,0,0>;
 #include "Hy_camera.inc"
 
-
-
+#include "Hy_transformations.inc"
+#include "Hy_objects.inc"
 
 
 //#include "Hy_Axis.inc"
@@ -92,63 +85,27 @@ global_settings{assumed_gamma 1.0}
 #debug "\nHeader Completed\n\n"
 ///////////////////////////////////////////////////////////////
 
-/*
-#declare p1=<1,-1,0>;
-#declare p2=<-1,1,0>;
-#declare r1=1/3;
-#declare r2=-1/2;
-
-object{Sphere(p1,r1) pigment{Red}}
-object{Sphere(p2,r2) pigment{Red}}
-object{Cone2(p1,r1,p2,r2) pigment{Red}}
-*/
 #declare axis=union{
-	Sphere(<0,0,0>,0.05)
+	object{Sphere(<0,0,0>,0.05)}
 	object{Arrow(<0,0,0>,<1,0,0>,0.02) pigment{rgb<1,0,0>}}
 	object{Arrow(<0,0,0>,<0,1,0>,0.02) pigment{rgb<0,1,0>}}
 	object{Arrow(<0,0,0>,<0,0,1>,0.02) pigment{rgb<0,0,1>}}
 }
 axis
 
-#declare a=<1.1,0.2,0.1>;
-#declare b=<-0.1,0.8,0.3>;
-#declare c=<0.5,0.1,1.4>;
-#declare d=<1,1,1>;
+#declare a=<0.5,0.2,0.1>;
+#declare b=<-0.3,0.8,0.3>;
+#declare c=<0,0.1,1.4>;
+#declare d=<0.8,0.8,0.8>;
 
 object{Sphere(a,0.03) pigment{Red}}
 object{Sphere(b,0.03) pigment{Green}}
 object{Sphere(c,0.03) pigment{Blue}}
 object{Sphere(d,0.03) pigment{Black}}
 
-//object{UnitSphericalTriangularPrism(a,b,c) pigment{rgbft<1,1,1,0.1,0.1>}}
-
-//#declare p=CircumCenter4(a,b,c,d);
-
-//object{Sphere(p,vlength(a-p))  pigment{rgbft<1,1,1,0.1,0.1>}}
-
-object{Arc3(a,b,c,0.01)}
+object{Torus3(a,b,c,0.01)}
 object{Torus3(b,c,d,0.01)}
 object{Torus3(c,d,a,0.01)}
 object{Torus3(d,a,b,0.01)}
 
 object{Sphere4(a,b,c,d) pigment{GrayTr}}
-
-
-/*
-#if(Time=0) #declare Time=0.001; #end
-
-#declare i=-5;
-#while(i<=5)
-	#declare j=-5;
-	#while(j<=5)
-		object{sphere{SGP(<i,j,0>,Time*tau/4),0.05}}
-		#declare j=j+1;
-	#end
-	object{Arc3(SGP(<i,-5,0>,Time*tau/4),SGP(<i,0,0>,Time*tau/4),SGP(<i,5,0>,Time*tau/4),0.03)}
-	object{Arc3(SGP(<-5,i,0>,Time*tau/4),SGP(<0,i,0>,Time*tau/4),SGP(<5,i,0>,Time*tau/4),0.03)}
-	#declare i=i+1;
-#end
-
-*/
-
-//object{Sphere(CircumCenter4(a,b,c,d),0.1) pigment{rgbft<1,1,1,0.1,0.1>}}

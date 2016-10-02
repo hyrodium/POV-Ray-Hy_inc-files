@@ -76,10 +76,11 @@
 #macro Blocks3(a,b,c,w)
 	#local n=Normal(a,b,c);
 	#if(Det(n,a-CircumCenter(a,b,c),c-CircumCenter(a,b,c))>0)
-		union{
+		union
 	#else
-		intersection{
+		intersection
 	#end
+		{
 			#local e1=a-CircumCenter(a,b,c);
 			#local e3=vcross(e1,n);
 			box{2*<1,1,1>,2*<-1,-1,0> Matrix(e1,w*n,e3,CircumCenter(a,b,c))}
@@ -87,29 +88,6 @@
 			#local e3=vcross(e1,n);
 			box{2*<1,1,-1>,2*<-1,-1,0> Matrix(e1,w*n,e3,CircumCenter(a,b,c))}
 		}
-#end
-
-#macro Blocks3a(a,b,c,w)
-	#local n=Normal(a,b,c);
-	#if(Det(n,a-CircumCenter(a,b,c),c-CircumCenter(a,b,c))>0)
-		union{
-			#local e1=a-CircumCenter(a,b,c);
-			#local e3=vcross(e1,n);
-			box{2*<1,1,1>,2*<-1,-1,0> Matrix(e1,w*n,e3,CircumCenter(a,b,c))}
-			#local e1=c-CircumCenter(a,b,c);
-			#local e3=vcross(e1,n);
-			box{2*<1,1,-1>,2*<-1,-1,0> Matrix(e1,w*n,e3,CircumCenter(a,b,c))}
-		}
-	#else
-		intersection{
-			#local e1=a-CircumCenter(a,b,c);
-			#local e3=vcross(e1,n);
-			box{2*<1,1,1>,2*<-1,-1,0> Matrix(e1,w*n,e3,CircumCenter(a,b,c))}
-			#local e1=c-CircumCenter(a,b,c);
-			#local e3=vcross(e1,n);
-			box{2*<1,1,-1>,2*<-1,-1,0> Matrix(e1,w*n,e3,CircumCenter(a,b,c))}
-		}
-	#end
 #end
 
 #macro Arc3(a,b,c,r)
@@ -211,3 +189,5 @@
 //Textrm
 //Display
 //TTFObj
+
+//DEG3

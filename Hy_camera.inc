@@ -5,28 +5,24 @@
 #ifndef(AspectRatio) #declare AspectRatio=1; #end
 #ifndef(Lng) #declare Lng=-90; #end
 #ifndef(Lat) #declare Lat=90; #end
+#ifndef(Tilt) #declare Tilt=0; #end
 #ifndef(Pers) #declare Pers=0; #end
 #ifndef(Zoom) #declare Zoom=1; #end
 #ifndef(LookAt) #declare LookAt=<0,0,0>; #end
 
-#if(Lat=90)
-	#declare Sky=-<cos(radians(Lng)),sin(radians(Lng)),0>;
-#elseif(Lat=-90)
-	#declare Sky=<cos(radians(Lng)),sin(radians(Lng)),0>;
-#elseif(cos(radians(Lat))<0)
-	#declare Sky=<0,0,-1>;
-#else
-	#declare Sky=<0,0,1>;
-#end
+#declare Z=SCS(Lng,Lat);
+#declare X=vaxis_rotate(<-sin(radians(Lng)),cos(radians(Lng)),0>,Z,Tilt);
+#declare Y=vcross(Z,X);
+
 #if(Pers)
 	#declare Loc=LookAt+SCS(Lng,Lat)/(Zoom*Pers);
 	camera{
 		perspective
 		location Loc
-		direction Loc
-		right <-2*sqrt(AspectRatio)/(Zoom),0,0>
-		up <0,2/(sqrt(AspectRatio)*Zoom),0>
-	 	sky Sky
+		right -2*X*sqrt(AspectRatio)/Zoom
+		up 2*Y/(sqrt(AspectRatio)*Zoom)
+		direction Z/(Zoom*Pers)
+	 	sky Y
 		look_at LookAt
 	}
 	light_source{
@@ -38,9 +34,9 @@
 	camera{
 		orthographic
 		location Loc*100
-		right <-2*sqrt(AspectRatio)/(Zoom),0,0>
-		up <0,2/(sqrt(AspectRatio)*Zoom),0>
-	 	sky Sky
+		right -2*X*sqrt(AspectRatio)/Zoom
+		up 2*Y/(sqrt(AspectRatio)*Zoom)
+	 	sky Y
 		look_at LookAt
 	}
 	light_source{
@@ -50,12 +46,10 @@
 		point_at 0
 	}
 #end
+
 background{rgb<1,1,1>}
 
 
-//#declare X=;
-#declare Y=-SCS(Lng,Lat);
-//#declare Z=;
 
 
 /*
