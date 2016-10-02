@@ -68,6 +68,10 @@
 #end
 
 #macro CircumRadius(a,b,c)
+	vlength(a-CircumCenter(a,b,c))
+#end
+
+#macro CircumRadius2(a,b,c)
 	sqrt(vdot(a-b,a-b)*vdot(b-c,b-c)*vdot(c-a,c-a))/(4*Area3(a,b,c))
 #end
 

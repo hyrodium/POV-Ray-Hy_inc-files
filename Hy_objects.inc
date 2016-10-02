@@ -126,10 +126,14 @@
 #end
 
 #macro Horn(k,a,N)
-	intersection{
-		object{Horn0(k,a*1.5,N) scale 1.5}
-		object{Pie3(<0,1/a-(1+2/k)/a,0>,<0,1/a-(1+2/k)*cos(a/2)/a,-(1+2/k)*sin(a/2)/a>,<0,1/a-(1+2/k)*cos(a)/a,-(1+2/k)*sin(a)/a>,2/k)}
-	}
+	#if(a)
+		intersection{
+			object{Horn0(k,a*1.5,N) scale 1.5}
+			object{Pie3(<0,1/a-(1+2/k)/a,0>,<0,1/a-(1+2/k)*cos(a/2)/a,-(1+2/k)*sin(a/2)/a>,<0,1/a-(1+2/k)*cos(a)/a,-(1+2/k)*sin(a)/a>,2/k)}
+		}
+	#else
+		object{Cone(-z,0,1/k)}
+	#end
 #end
 
 #macro Arrow3(a,b,c,r)

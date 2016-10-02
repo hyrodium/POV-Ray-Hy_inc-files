@@ -2,7 +2,7 @@
 //Hy_transformations.inc
 
 //#include "Hy_camera.inc"
-#ifndef(AspectRatio) #declare AspectRatio=1; #end
+#ifndef(AspectRatio) #declare AspectRatio=image_width/image_height; #end
 #ifndef(Lng) #declare Lng=-90; #end
 #ifndef(Lat) #declare Lat=90; #end
 #ifndef(Tilt) #declare Tilt=0; #end
@@ -27,7 +27,7 @@
 	}
 	light_source{
 		Loc
-		color rgb<1,1,1>
+		color White
 	}
 #else
 	#declare Loc=SCS(Lng,Lat);
@@ -41,13 +41,13 @@
 	}
 	light_source{
 		SCS(Lng,Lat)
-		color rgb<1,1,1>
+		color White
 		parallel
 		point_at 0
 	}
 #end
 
-background{rgb<1,1,1>}
+background{White}
 
 
 

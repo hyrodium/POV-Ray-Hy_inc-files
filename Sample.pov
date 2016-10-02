@@ -13,10 +13,8 @@ global_settings{assumed_gamma 1.0}
 #declare Dir_Time=1;
 #include "Hy_clock.inc"
 
-#declare AspectRatio=1/1;
 #declare Lng=30;
 #declare Lat=30;
-#declare Tilt=0;
 #declare Pers=0.1;
 #declare Zoom=2/3;
 #declare LookAt=<0,0,0>;
@@ -25,12 +23,11 @@ global_settings{assumed_gamma 1.0}
 #include "Hy_transformations.inc"
 #include "Hy_objects.inc"
 
-
 //#include "Hy_Axis.inc"
 #declare r_axis=0.02;
 #declare I=3;
 #declare fontsize=0.5;
-#declare axis_color=rgb<0,0,0>;
+#declare axis_color=Black;
 #declare x_min=-I;
 #declare y_min=-I;
 #declare z_min=-I;
@@ -58,7 +55,7 @@ global_settings{assumed_gamma 1.0}
 #end
 
 //Unit Sphere
-//object{sphere{0,1}pigment{rgbft<0.5,0.5,0.5,0,0.7>}}
+//object{sphere{0,1}pigment{GrayTr}}
 
 //Unit Circle
 #if(0)
@@ -70,14 +67,12 @@ global_settings{assumed_gamma 1.0}
 	object{Torus(0,z,1,r_axis)pigment{Black}}
 #end
 
-
-
 //Rotate Arrows around Axises
 #declare i=0;
 #while(i<0)
 	object{Arrow3(Exp(<0,tau/6>)/2,Exp(<0,tau/2>)/2,Exp(<0,tau/12>)/2,0.03)  translate <0,0,I/2> RotateMatrix(<1,1,1>,i*tau/3,0)}
-	object{Tile(2,0) RotateMatrix(<1,1,1>,i*tau/3,0) pigment{Yellow}}
-	object{Tile(2,1) RotateMatrix(<1,1,1>,i*tau/3,0) pigment{Cyan}}
+	//object{Tile(2,0) RotateMatrix(<1,1,1>,i*tau/3,0) pigment{Yellow}}
+	//object{Tile(2,1) RotateMatrix(<1,1,1>,i*tau/3,0) pigment{Cyan}}
 	#declare i=i+1;
 #end
 
@@ -87,9 +82,9 @@ global_settings{assumed_gamma 1.0}
 
 #declare axis=union{
 	object{Sphere(<0,0,0>,0.05)}
-	object{Arrow(<0,0,0>,<1,0,0>,0.02) pigment{rgb<1,0,0>}}
-	object{Arrow(<0,0,0>,<0,1,0>,0.02) pigment{rgb<0,1,0>}}
-	object{Arrow(<0,0,0>,<0,0,1>,0.02) pigment{rgb<0,0,1>}}
+	object{Arrow(<0,0,0>,<1,0,0>,0.02) pigment{Red}}
+	object{Arrow(<0,0,0>,<0,1,0>,0.02) pigment{Green}}
+	object{Arrow(<0,0,0>,<0,0,1>,0.02) pigment{Blue}}
 }
 axis
 
