@@ -1,6 +1,8 @@
-# POV-Ray-Hy_inc-files
+# POV-Ray_useful_files
 
-POV-Rayのためのincファイル集です.
+POV-Rayのための超便利ファイル集です.
+
+## include
 
 | inc file |内容|
 | ---- | ---- |
@@ -11,3 +13,15 @@ POV-Rayのためのincファイル集です.
 | Hy_objects.inc | オブジェクトの定義 |
 | Hy_clock.inc | 時間変数の設定 |
 | Hy_camera.inc | カメラの設定 |
+
+## ini
+
+quickers2.ini
+
+## povraymk
+
+Auto rendering tool for POV-Ray.
+
+## sample
+
+Sample pov file
