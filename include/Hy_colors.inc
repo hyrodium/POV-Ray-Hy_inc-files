@@ -28,3 +28,12 @@
 
 
 #declare Clear=rgbf 1;
+
+
+#macro HSVtoRGB(r,g,b)
+    <r,g,b>
+#end
+
+#macro Color(RGB,F,T)
+    rgbft<vdot(RGB,x),vdot(RGB,y),vdot(RGB,z),F,T>
+#end
